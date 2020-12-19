@@ -27,8 +27,32 @@
             compatible = "zmk,behavior-combo";
             label = "COMBO_BKSP";
             timeout-ms = <50>;
-            key-positions = <0 1>;
+            key-positions = <17 18>;
             bindings = <&kp BKSP>;
+        };
+
+        combo_ent {
+            compatible = "zmk,behavior-combo";
+            label = "COMBO_ENT";
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp RET>;
+        };
+
+        combo_tab {
+            compatible = "zmk,behavior-combo";
+            label = "COMBO_TAB";
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_del {
+            compatible = "zmk,behavior-combo";
+            label = "COMBO_DEL";
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp DEL>;
         };
     };
 };
@@ -42,7 +66,7 @@
                 &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P
                 &hm LSFT A &hm LCTL S &hm LALT D &hm LGUI F &kp G &kp H &hm LGUI J &hm RALT K &hm RCTL L &hm RSFT SCLN
                 &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp CMMA &kp DOT &kp FSLH
-                &lt FUNC TAB &lt NAV SPC &lt FUNC RET
+                &lt FUNC ESC &lt NAV SPC &lt FUNC RET
             >;
         };
 

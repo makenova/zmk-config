@@ -23,9 +23,9 @@
             bindings = <&kp>, <&kp>;
         };
 
-        combo_one {
+        combo_bksp {
             compatible = "zmk,behavior-combo";
-            label = "COMBO_ONE";
+            label = "COMBO_BKSP";
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp BKSP>;

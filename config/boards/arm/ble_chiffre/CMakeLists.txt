@@ -1,5 +1,8 @@
-# SPDX-License-Identifier: MIT
-
-board_runner_args(nrfjprog "--nrf-family=NRF52" "--softreset")
-include(${ZEPHYR_BASE}/boards/common/blackmagicprobe.board.cmake)
-include(${ZEPHYR_BASE}/boards/common/nrfjprog.board.cmake)
+set_property(GLOBAL APPEND PROPERTY extra_post_build_commands
+  COMMAND ${PYTHON_EXECUTABLE} ${ZEPHYR_BASE}/../tools/uf2/utils/uf2conv.py
+  -c 
+  -b 0x26000
+  -f 0xADA52840
+  -o ${PROJECT_BINARY_DIR}/${CONFIG_KERNEL_BIN_NAME}.uf2
+  ${PROJECT_BINARY_DIR}/${CONFIG_KERNEL_BIN_NAME}.bin
+)

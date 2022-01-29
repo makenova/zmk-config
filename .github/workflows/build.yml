@@ -35,12 +35,6 @@ jobs:
         run: west zephyr-export
       - name: West Build (BLe Chiffre)
         run: west build -s zmk/app -b ble_chiffre -d ble_chiffre -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      #   uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-      #   id: west-build-ble-chiffre
-      #   with:
-      #     args: 'build "-s zmk/app -b ble_chiffre -d ble_chiffre -- -DZMK_CONFIG=/github/workspace/config"'
-      # - name: BLe_Chffre Kconfig file
-      #   run: cat ble_chiffre/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: BLe Chiffre DTS File
         if: ${{ always() }}
         run: cat -n ble_chiffre/zephyr/ble_chiffre.dts.pre.tmp
